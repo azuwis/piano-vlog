@@ -1,9 +1,9 @@
 {
-  "name": "svelte-parcel-talwind-starter",
+  "name": "piano-vlog",
   "version": "1.0.0",
-  "description": "Svelte with Tailwind and Parcel",
+  "description": "Piano Vlog",
   "main": "./src/main.js",
-  "author": "iljoo",
+  "author": "azuwis",
   "license": "MIT",
   "private": false,
   "scripts": {
