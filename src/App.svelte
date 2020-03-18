@@ -25,7 +25,7 @@ function play(video) {
           </iframe>
         </div>
       {:else}
-        <img on:click={() => play(video)} class='w-full' src='//i0.hdslb.com/bfs/archive/{video.cover}.jpg' alt='{video.title_zh}'>
+        <img on:click={() => play(video)} class='w-full cursor-pointer' src='//i0.hdslb.com/bfs/archive/{video.cover}.jpg' alt='{video.title_zh}'>
       {/if}
       <div class='px-6 py-3'>
         <div class='font-bold text-xl mb-2'>{video.title_zh}</div>
