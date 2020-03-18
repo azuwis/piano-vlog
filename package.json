@@ -8,7 +8,8 @@
   "private": false,
   "scripts": {
     "start": "parcel src/index.html --port 3000",
-    "build": "rm -rf dist && parcel build src/index.html --no-source-maps"
+    "build": "rm -rf dist && parcel build src/index.html --no-source-maps",
+    "lint": "eslint src/*.js src/*.svelte"
   },
   "browserslist": [
     "last 1 chrome versions"
@@ -16,11 +17,10 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.0",
     "autoprefixer": "^9.7.4",
+    "eslint": "^6.8.0",
     "eslint-plugin-svelte3": "^2.7.3",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-svelte": "^4.0.6",
-    "prettier": "^1.19.1",
-    "prettier-plugin-svelte": "^0.7.0",
     "slugify": "^1.4.0",
     "svelte": "^3.20.1",
     "tailwindcss": "^1.2.0",
