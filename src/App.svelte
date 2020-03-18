@@ -16,26 +16,26 @@ function play(video) {
 }
 </style>
 
-<div class='grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
   {#each videos as video}
-    <div class='max-w-md rounded overflow-hidden shadow-lg m-1'>
+    <div class="max-w-md rounded overflow-hidden shadow-lg m-1">
       {#if video.play}
         <div style="position:relative;padding-top:62.5%;">
-          <iframe src='//player.bilibili.com/player.html?autoplay=1&aid={video.bilibili.replace("av", "")}' style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          <iframe src="//player.bilibili.com/player.html?autoplay=1&aid={video.bilibili.replace('av', '')}" style="position:absolute;top:0;left:0;width:100%;height:100%;">
           </iframe>
         </div>
       {:else}
-        <img on:click={() => play(video)} class='w-full cursor-pointer' src='//i0.hdslb.com/bfs/archive/{video.cover}.jpg' alt='{video.title_zh}'>
+        <img on:click={() => play(video)} class="w-full cursor-pointer" src="//i0.hdslb.com/bfs/archive/{video.cover}.jpg" alt="{video.title_zh}">
       {/if}
-      <div class='px-6 py-3'>
-        <div class='font-bold text-xl mb-2'>{video.title_zh}</div>
-        <p class='text-gray-700 text-lg'>{video.title_en}</p>
+      <div class="px-6 py-3">
+        <div class="font-bold text-xl mb-2">{video.title_zh}</div>
+        <p class="text-gray-700 text-lg">{video.title_en}</p>
       </div>
-      <div class='px-6 pt-1 pb-4'>
-        <a href='https://www.bilibili.com/video/{video.bilibili}' class='btn' target='_blank'>视频</a>
-        <a href='/pdf/{slugify(video.title_en, "_")}.pdf' class='btn'>琴谱</a>
+      <div class="px-6 pt-1 pb-4">
+        <a href="https://www.bilibili.com/video/{video.bilibili}" class="btn" target="_blank">视频</a>
+        <a href="/pdf/{slugify(video.title_en, '_')}.pdf" class="btn">琴谱</a>
         {#if video.tutorial}
-          <a href='https://www.bilibili.com/video/{video.tutorial}' class='btn' target='_blank'>教程</a>
+          <a href="https://www.bilibili.com/video/{video.tutorial}" class="btn" target="_blank">教程</a>
         {/if}
       </div>
     </div>
