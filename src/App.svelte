@@ -33,7 +33,9 @@ function play(video) {
       </div>
       <div class="px-6 pt-1 pb-4">
         <a href="https://www.bilibili.com/video/{video.bilibili}" class="btn" target="_blank">视频</a>
-        <a href="/pdf/{slugify(video.title_en, '_')}.pdf" class="btn">琴谱</a>
+        {#if video.sheet !== false}
+          <a href="/pdf/{slugify(video.title_en, '_')}.pdf" class="btn">琴谱</a>
+        {/if}
         {#if video.tutorial}
           <a href="https://www.bilibili.com/video/{video.tutorial}" class="btn" target="_blank">教程</a>
         {/if}
