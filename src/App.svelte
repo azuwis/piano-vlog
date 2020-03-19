@@ -39,7 +39,7 @@ function play(video) {
     <div class="bg-white rounded overflow-hidden shadow-xl m-1">
       {#if video.play}
         <div style="position:relative;padding-top:62.5%;">
-          <iframe src="//player.bilibili.com/player.html?autoplay=1&aid={video.bilibili.replace('av', '')}" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          <iframe title="Bilibili" src="//player.bilibili.com/player.html?autoplay=1&aid={video.bilibili.replace('av', '')}" style="position:absolute;top:0;left:0;width:100%;height:100%;">
           </iframe>
         </div>
       {:else}
