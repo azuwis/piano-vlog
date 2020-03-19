@@ -12,7 +12,7 @@ function play(video) {
 
 <style>
 .btn {
-  @apply inline-block bg-gray-300 rounded-full px-3 py-1 font-semibold text-gray-700 mr-1;
+  @apply inline-block bg-gray-200 rounded-lg px-3 py-1 font-semibold text-gray-700 mr-1;
 }
 </style>
 
@@ -27,11 +27,11 @@ function play(video) {
       {:else}
         <img on:click={() => play(video)} class="w-full cursor-pointer" src="//i0.hdslb.com/bfs/archive/{video.cover}.jpg" alt="{video.title_zh}">
       {/if}
-      <div class="px-6 py-3">
+      <div class="px-4 py-3">
         <div class="font-bold text-xl mb-2">{video.title_zh}</div>
         <p class="text-gray-700 text-lg">{video.title_en}</p>
       </div>
-      <div class="px-6 pt-1 pb-4">
+      <div class="px-4 pt-1 pb-4">
         <a href="https://www.bilibili.com/video/{video.bilibili}" class="btn" target="_blank">视频</a>
         {#if video.sheet !== false}
           <a href="/pdf/{slugify(video.title_en, '_')}.pdf" class="btn">琴谱</a>
