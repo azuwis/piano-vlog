@@ -3,6 +3,18 @@ import slugify from 'slugify';
 import data from './videos.json';
 
 let videos = data;
+let hint = false;
+const isApp = navigator.userAgent.match(/(Bili)/);
+
+function hideHint() {
+  hint = false;
+}
+
+function showHint() {
+  if (isApp) {
+    hint = true;
+  }
+}
 
 function play(video) {
   video.play = true;
@@ -16,6 +28,12 @@ function play(video) {
 }
 </style>
 
+{#if hint}
+  <div on:click={hideHint} class="fixed w-full bg-white text-gray-700 border border-gray-400 px-4 py-3 mt-1 rounded-lg shadow-xl ">
+    下载琴谱需点菜单 ⋮ 浏览器打开
+    <div class="absolute top-0 right-0 px-4 py-2 mt-1">⤴</div>
+  </div>
+{/if}
 <div class="bg-gray-100 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
   {#each videos as video}
     <div class="bg-white rounded overflow-hidden shadow-xl m-1">
@@ -34,7 +52,7 @@ function play(video) {
       <div class="px-4 pt-1 pb-4">
         <a href="https://www.bilibili.com/video/{video.bilibili}" class="btn" target="_blank">视频</a>
         {#if video.sheet !== false}
-          <a href="/pdf/{slugify(video.title_en, '_')}.pdf" class="btn">琴谱</a>
+          <a on:click={showHint} href="/pdf/{slugify(video.title_en, '_')}.pdf" class="btn">琴谱</a>
         {/if}
         {#if video.tutorial}
           <a href="https://www.bilibili.com/video/{video.tutorial}" class="btn" target="_blank">教程</a>
