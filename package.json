@@ -22,7 +22,6 @@
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-static-files-copy": "^2.3.1",
     "parcel-plugin-svelte": "^4.0.6",
-    "slugify": "^1.4.0",
     "svelte": "^3.20.1",
     "tailwindcss": "^1.2.0"
   }
