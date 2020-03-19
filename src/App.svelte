@@ -12,13 +12,13 @@ function play(video) {
 
 <style>
 .btn {
-  @apply inline-block bg-gray-200 rounded-full px-3 py-1 font-semibold text-gray-700 mr-1;
+  @apply inline-block bg-gray-300 rounded-full px-3 py-1 font-semibold text-gray-700 mr-1;
 }
 </style>
 
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="bg-gray-100 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
   {#each videos as video}
-    <div class="max-w-md rounded overflow-hidden shadow-2xl m-1">
+    <div class="bg-white rounded overflow-hidden shadow-xl m-1">
       {#if video.play}
         <div style="position:relative;padding-top:62.5%;">
           <iframe src="//player.bilibili.com/player.html?autoplay=1&aid={video.bilibili.replace('av', '')}" style="position:absolute;top:0;left:0;width:100%;height:100%;">
