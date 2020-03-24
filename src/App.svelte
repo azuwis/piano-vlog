@@ -23,7 +23,7 @@ function play(video) {
 
 <style>
 .btn {
-  @apply inline-block bg-gray-200 rounded-lg px-3 py-1 font-semibold text-gray-700 mr-1;
+  @apply inline-block bg-gray-200 rounded-lg px-3 py-1 font-medium text-gray-700 mr-1;
 }
 </style>
 
@@ -44,18 +44,18 @@ function play(video) {
           <img on:click={() => play(video)} class="absolute h-full w-full object-cover cursor-pointer" src="//i0.hdslb.com/bfs/archive/{video.cover}.jpg" alt="{video.title_zh}">
         {/if}
       </div>
-      <div class="px-4 py-3">
-        <div class="font-bold text-xl mb-2">{video.title_zh}</div>
+      <div class="px-4 py-3 tracking-wide">
+        <h3 class="font-medium text-xl">{video.title_zh}</h3>
         <p class="text-gray-700 text-lg">{video.title_en}</p>
-      </div>
-      <div class="px-4 pt-1 pb-4">
-        <a href="https://www.bilibili.com/video/{video.bilibili}" class="btn" target="_blank">视频</a>
-        {#if video.sheet !== false}
-          <a on:click={showHint} href="/pdf/{video.title_en.replace(/ /g, '_')}.pdf" class="btn">琴谱</a>
-        {/if}
-        {#if video.tutorial}
-          <a href="https://www.bilibili.com/video/{video.tutorial}" class="btn" target="_blank">教程</a>
-        {/if}
+        <div class="mt-2">
+          <a href="https://www.bilibili.com/video/{video.bilibili}" class="btn" target="_blank">视频</a>
+          {#if video.sheet !== false}
+            <a on:click={showHint} href="/pdf/{video.title_en.replace(/ /g, '_')}.pdf" class="btn">琴谱</a>
+          {/if}
+          {#if video.tutorial}
+            <a href="https://www.bilibili.com/video/{video.tutorial}" class="btn" target="_blank">教程</a>
+          {/if}
+        </div>
       </div>
     </div>
   {/each}
