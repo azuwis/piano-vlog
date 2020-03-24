@@ -35,7 +35,7 @@ function play(video) {
 </div>
 <div class="bg-gray-100 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
   {#each videos as video}
-    <div class="bg-white rounded overflow-hidden shadow-xl m-1">
+    <div class="bg-white border-t border-r border-l rounded-lg shadow-md overflow-hidden m-1">
       <div class="relative pb-5/8">
         {#if video.play}
           <iframe title="Bilibili" class="absolute h-full w-full" src="//player.bilibili.com/player.html?autoplay=1&aid={video.bilibili.replace('av', '')}">
