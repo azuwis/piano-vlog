@@ -27,7 +27,7 @@ function play(video) {
 }
 </style>
 
-<div class:hidden="{!hint}" on:click={hideHint} class="fixed z-10 flex w-full items-center justify-between bg-white text-gray-700 border border-gray-400 px-4 py-3 mt-1 rounded-lg shadow-xl">
+<div class:hidden="{!hint}" on:click={hideHint} class="fixed z-10 flex inset-x-0 items-center justify-between bg-gray-700 text-white rounded-full shadow-lg px-4 py-3 m-2">
   <div>
     下载琴谱需点菜单 ⋮ 浏览器打开
   </div>
