@@ -27,12 +27,12 @@ function play(video) {
 }
 </style>
 
-{#if hint}
-  <div on:click={hideHint} class="fixed w-full bg-white text-gray-700 border border-gray-400 px-4 py-3 mt-1 rounded-lg shadow-xl ">
+<div class:hidden="{!hint}" on:click={hideHint} class="fixed flex w-full items-center justify-between bg-white text-gray-700 border border-gray-400 px-4 py-3 mt-1 rounded-lg shadow-xl">
+  <div>
     下载琴谱需点菜单 ⋮ 浏览器打开
-    <div class="absolute top-0 right-0 px-4 py-2 mt-1">⤴</div>
   </div>
-{/if}
+  <div>⤴</div>
+</div>
 <div class="bg-gray-100 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
   {#each videos as video}
     <div class="bg-white rounded overflow-hidden shadow-xl m-1">
