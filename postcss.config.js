@@ -7,7 +7,7 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
   ],
   whitelistPatterns: [/svelte-/],
   defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-})
+});
 
 const plugins =
   process.env.NODE_ENV === 'production'

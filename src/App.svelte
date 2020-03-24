@@ -36,14 +36,14 @@ function play(video) {
 <div class="bg-gray-100 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
   {#each videos as video}
     <div class="bg-white rounded overflow-hidden shadow-xl m-1">
-      {#if video.play}
-        <div style="position:relative;padding-top:62.5%;">
-          <iframe title="Bilibili" src="//player.bilibili.com/player.html?autoplay=1&aid={video.bilibili.replace('av', '')}" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+      <div class="relative pb-5/8">
+        {#if video.play}
+          <iframe title="Bilibili" class="absolute h-full w-full" src="//player.bilibili.com/player.html?autoplay=1&aid={video.bilibili.replace('av', '')}">
           </iframe>
-        </div>
-      {:else}
-        <img on:click={() => play(video)} class="w-full cursor-pointer" src="//i0.hdslb.com/bfs/archive/{video.cover}.jpg" alt="{video.title_zh}">
-      {/if}
+        {:else}
+          <img on:click={() => play(video)} class="absolute h-full w-full object-cover cursor-pointer" src="//i0.hdslb.com/bfs/archive/{video.cover}.jpg" alt="{video.title_zh}">
+        {/if}
+      </div>
       <div class="px-4 py-3">
         <div class="font-bold text-xl mb-2">{video.title_zh}</div>
         <p class="text-gray-700 text-lg">{video.title_en}</p>
