@@ -33,7 +33,7 @@ function play(video) {
   </div>
   <div>⤴</div>
 </div>
-<div class="max-w-screen-xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 bg-gray-100">
+<div class="max-w-screen-xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3">
   {#each videos as video}
     <div class="bg-white border-t border-r border-l rounded-lg shadow-md overflow-hidden m-1">
       <div class="relative pb-5/8">
