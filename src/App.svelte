@@ -38,7 +38,7 @@ function play(video) {
     <div class="bg-white border-t border-r border-l rounded-lg shadow-md overflow-hidden m-1">
       <div class="relative pb-5/8">
         {#if video.play}
-          <iframe title="Bilibili" class="absolute h-full w-full" src="//player.bilibili.com/player.html?autoplay=1&aid={video.bilibili.replace('av', '')}">
+          <iframe title="Bilibili" class="absolute h-full w-full" src="//player.bilibili.com/player.html?autoplay=1&bvid={video.bilibili}">
           </iframe>
         {:else}
           <img on:click={() => play(video)} class="absolute h-full w-full object-cover cursor-pointer" src="//i0.hdslb.com/bfs/archive/{video.cover}.jpg" alt="{video.title_zh}">
